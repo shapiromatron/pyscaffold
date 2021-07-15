@@ -8,8 +8,8 @@ To customize for your own package:
 
 1. Find and replace `pyscaffold` and replace with `yourproject` - or whatever you want to call it.
     - includes source code, tests, and the readme!
-    - rename the `pyscaffold` project folder too
-2. Follow the developer setup below!
+    - rename the `pyscaffold` project and test folder too
+2. Follow the "Developer setup" section below
 3. Delete this section from your readme
 
 AKA, the manual [cookiecutter](https://github.com/cookiecutter/cookiecutter)...
