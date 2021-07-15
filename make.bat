@@ -22,7 +22,7 @@ black . --check && flake8 .
 goto :eof
 
 :format
-black . && isort -rc -y && flake8 .
+black . && isort -q . && flake8 .
 goto :eof
 
 :test

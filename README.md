@@ -2,6 +2,8 @@
 
 An opinionated starter template for setting up a python 3.9+ package with a CLI.
 
+NOTE: this project is unrelated to the excellent [PyScaffold](https://pypi.org/project/PyScaffold/) project. This repo will likely not be published to pypi, and handles a much smaller and more narrow use case. Apologies in advance for the confusion in naming.
+
 ## Customize for your project...
 
 To customize for your own package:
