@@ -1,4 +1,4 @@
-name: build
+name: release
 
 # example build wheel on push to certain branches.
 #
@@ -7,6 +7,10 @@ name: build
 # - artifact storage on github isn't permanent
 on:
   push:
+    branches:
+      - main
+      - ci
+  pull_request:
     branches:
       - main
       - ci
