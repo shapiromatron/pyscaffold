@@ -1,0 +1,37 @@
+name: build
+
+# example build wheel on push to certain branches.
+#
+# Limitations
+# - This should be changed to use releases, etc for more formal work
+# - artifact storage on github isn't permanent
+on:
+  push:
+    branches:
+      - main
+      - ci
+
+jobs:
+  build:
+    on:
+      branches:
+        - main
+    runs-on: "ubuntu-20.04"
+    steps:
+    - uses: actions/checkout@v1
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+          run: |
+            pip install -U pip wheel
+            pip install -r requirements_dev.txt
+      - name: build wheel
+        run: |
+          make build
+      - name: Upload wheel
+        uses: actions/upload-artifact@v2
+        with:
+          name: wheel
+          path: dist/*.whl
