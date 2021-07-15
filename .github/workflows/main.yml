@@ -1,17 +1,15 @@
 name: CI
 
-on: [pull_request]
-
 jobs:
 
   test:
+    on: [pull_request]
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.9]
         os: ["ubuntu-20.04", "windows-2019"]
-
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python ${{ matrix.python-version }}
