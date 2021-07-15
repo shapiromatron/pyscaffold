@@ -1,0 +1,14 @@
+# build
+wheel==0.36.2
+
+# tests
+pytest==6.2.4
+
+# lint and formatting tools
+black==19.10b0
+flake8==3.9.2
+flake8-isort==4.0.0
+isort==5.9.2
+
+# install package in editable mode
+-e .
