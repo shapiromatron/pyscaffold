@@ -29,26 +29,26 @@ jobs:
         run: |
           make test
 
-build:
-  on:
-    branches:
-      - main
-  runs-on: "ubuntu-20.04"
-  steps:
-  - uses: actions/checkout@v1
-    - name: Set up Python
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.9
-    - name: Install dependencies
-        run: |
-          pip install -U pip wheel
-          pip install -r requirements_dev.txt
-    - name: build wheel
-      run: |
-        make build
-    - name: Upload wheel
-      uses: actions/upload-artifact@v2
-      with:
-        name: wheel
-        path: dist/*.whl
+# build:
+#   on:
+#     branches:
+#       - main
+#   runs-on: "ubuntu-20.04"
+#   steps:
+#   - uses: actions/checkout@v1
+#     - name: Set up Python
+#       uses: actions/setup-python@v1
+#       with:
+#         python-version: 3.9
+#     - name: Install dependencies
+#         run: |
+#           pip install -U pip wheel
+#           pip install -r requirements_dev.txt
+#     - name: build wheel
+#       run: |
+#         make build
+#     - name: Upload wheel
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: wheel
+#         path: dist/*.whl
