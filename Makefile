@@ -20,10 +20,10 @@ clean: ## remove build artifacts
 	@rm -rf dist/
 
 lint:  ## Check for python formatting issues via black & flake8
-	@black . --check && isort -q --check . && flake8 .
+	@black . --check && flake8 .
 
 format:  ## Modify python code using black & show flake8 issues
-	@black . && isort -q . && flake8 .
+	@black . && isort . && flake8 .
 
 test:
 	@py.test
