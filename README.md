@@ -34,7 +34,7 @@ pip install pyscaffold
 # test our CLI
 pyscaffold --help
 pyscaffold hello
-pyscallold hello --name Andy
+pyscaffold hello --name Andy
 pyscaffold bottles -n 10
 ```
 
