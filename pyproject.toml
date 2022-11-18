@@ -31,6 +31,5 @@ multi_line_output = 3
 skip = ["build/", "scripts/private/", "venv/"]
 
 [tool.pytest.ini_options]
-testpaths = [
-  "tests"
-]
+pythonpath = ["src"]
+testpaths = "tests"

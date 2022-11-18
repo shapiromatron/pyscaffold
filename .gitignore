@@ -8,9 +8,11 @@
 .vscode/
 build/
 dist/
+htmlcov/
 venv/
 
 # files
 *.log
 *.py[cod]
+.coverage
 .env
