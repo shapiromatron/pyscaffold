@@ -1,4 +1,4 @@
-.PHONY: clean lint format test build
+.PHONY: clean lint format test coverage build
 .DEFAULT_GOAL := help
 
 define PRINT_HELP_PYSCRIPT
@@ -27,6 +27,10 @@ format:  ## Modify python code using black & show flake8 issues
 
 test:
 	@py.test
+
+coverage: ## Generate coverage report
+	@coverage run -m pytest
+	@coverage html
 
 build: clean ## build wheel package
 	@python setup.py bdist_wheel
