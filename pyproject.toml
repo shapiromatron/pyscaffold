@@ -1,3 +1,33 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "pyscaffold"
+authors = [{name = "My pyscaffold", email = "pyscaffold@email.com"}]
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file="LICENSE" }
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+  "typer",
+]
+
+[project.urls]
+Home = "https://github.com/shapiromatron/pyscaffold"
+Changes = "https://github.com/shapiromatron/pyscaffold/blob/main/HISTORY.md"
+"Issue Tracker" = "https://github.com/shapiromatron/pyscaffold/issues"
+
+[project.scripts]
+pyscaffold = "pyscaffold.cli:app"
+
 [tool.black]
 line-length = 100
 target-version = ['py311']

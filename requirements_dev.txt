@@ -1,5 +1,5 @@
 # build
-wheel==0.40.0
+flit==3.8.0
 
 # tests
 coverage==7.2.3
