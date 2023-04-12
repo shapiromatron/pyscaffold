@@ -11,19 +11,19 @@ goto :help
 
 :help
 echo.Please use `make ^<target^>` where ^<target^> is one of
-echo.  lint         perform both lint-py and lint-js
-echo.  format       perform both format-py and lint-js
-echo.  test         run python tests
-echo.  coverage     generate coverage report
-echo.  build        build a python wheel for distribution
+echo.  lint         Check formatting issues
+echo.  format       Fix formatting issues (where possible)
+echo.  test         Run tests
+echo.  coverage     Generate coverage report
+echo.  build        Build python wheel package
 goto :eof
 
 :lint
-black . --check && flake8 .
+black . --check && ruff .
 goto :eof
 
 :format
-black . && isort . && flake8 .
+black . && ruff . --fix
 goto :eof
 
 :test

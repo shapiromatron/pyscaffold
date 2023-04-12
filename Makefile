@@ -15,23 +15,23 @@ export PRINT_HELP_PYSCRIPT
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-clean: ## remove build artifacts
+clean: ## Remove build artifacts
 	@rm -rf build/
 	@rm -rf dist/
 
-lint:  ## Check for python formatting issues via black & flake8
-	@black . --check && flake8 .
+lint:  ## Check formatting issues
+	@black . --check && ruff .
 
-format:  ## Modify python code using black & show flake8 issues
-	@black . && isort . && flake8 .
+format:  ## Fix formatting issues (where possible)
+	@black . && ruff . --fix
 
-test:
+test:  ## Run tests
 	@py.test
 
 coverage: ## Generate coverage report
 	@coverage run -m pytest
 	@coverage html
 
-build: clean ## build wheel package
+build: clean ## Build python wheel package
 	@python setup.py bdist_wheel
 	@ls -l dist
