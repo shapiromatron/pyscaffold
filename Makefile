@@ -33,5 +33,5 @@ coverage: ## Generate coverage report
 	@coverage html
 
 build: clean ## Build python wheel package
-	@python setup.py bdist_wheel
+	@flit build
 	@ls -l dist
