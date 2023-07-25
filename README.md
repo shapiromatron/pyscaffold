@@ -24,9 +24,7 @@ Make sure you have python 3.11 available and on your path. Then:
 # update pip
 python -m pip install -U pip
 
-# if it's local file...
-pip install path/to/pyscaffold-0.0.1-py3-none-any.whl
-# if it's on github somewhere...
+# if it's local file or a github link...
 pip install path/to/pyscaffold-0.0.1-py3-none-any.whl
 # if it's on pypi
 pip install pyscaffold
@@ -35,7 +33,7 @@ pip install pyscaffold
 pyscaffold --help
 pyscaffold hello
 pyscaffold hello --name Andy
-pyscaffold bottles -n 10
+pyscaffold bottles --num 20
 ```
 
 ## Developer setup
@@ -51,7 +49,7 @@ source venv/bin/activate  # or venv\Scripts\activate on windows.
 
 # install packages
 python -m pip install -U pip
-pip install -r requirements_dev.txt
+pip install -e ".[dev]"
 
 # test local install
 pyscaffold hello
