@@ -25,8 +25,8 @@ dev = [
   "flit~=3.9.0",
   "coverage~=7.2.7",
   "pytest~=7.4.0",
-  "black~=23.7.0",
-  "ruff~=0.0.280",
+  "black==23.7.0",
+  "ruff==0.0.280",
 ]
 
 [project.urls]
