@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U pip
-          python -m pip install -r ".[dev]"
+          python -m pip install -e ".[dev]"
       - name: Check all Makefile commands
         run: |
           make clean
