@@ -38,6 +38,8 @@ pyscaffold bottles --num 20
 
 ## Developer setup
 
+Make sure you have python 3.11 available and on your path. Then:
+
 ```bash
 # clone project
 git clone git@github.com:shapiromatron/pyscaffold.git
@@ -49,7 +51,7 @@ source venv/bin/activate  # or venv\Scripts\activate on windows.
 
 # install packages
 python -m pip install -U pip
-pip install -e ".[dev]"
+python -m pip install -e ".[dev]"
 
 # test local install
 pyscaffold hello
