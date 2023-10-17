@@ -7,14 +7,14 @@ name = "pyscaffold"
 authors = [{name = "My pyscaffold", email = "pyscaffold@email.com"}]
 dynamic = ["version", "description"]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = { file="LICENSE" }
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
   "License :: OSI Approved :: MIT License",
   "Natural Language :: English",
-  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Private :: Do Not Upload",
 ]
 dependencies = [
@@ -24,10 +24,10 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "flit~=3.9.0",
-  "coverage~=7.2.7",
-  "pytest~=7.4.0",
-  "black==23.7.0",
-  "ruff==0.0.280",
+  "coverage~=7.3.2",
+  "pytest~=7.4.2",
+  "black==23.9.1",
+  "ruff==0.1.0",
 ]
 
 [project.urls]

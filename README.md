@@ -1,6 +1,6 @@
 # pyscaffold
 
-An opinionated starter template for setting up a python 3.11+ package with a CLI.
+An opinionated starter template for setting up a python 3.12+ package with a CLI.
 
 NOTE: this project is unrelated to the excellent [PyScaffold](https://pypi.org/project/PyScaffold/) project. This repo will likely not be published to pypi, and handles a much smaller and more narrow use case. Apologies in advance for the confusion in naming.
 
@@ -18,7 +18,7 @@ AKA, the manual [cookiecutter](https://github.com/cookiecutter/cookiecutter)...
 
 ## Quickstart
 
-Make sure you have python 3.11 available and on your path. Then:
+Make sure you have python 3.12 available and on your path. Then:
 
 ```bash
 # update pip
@@ -38,7 +38,7 @@ pyscaffold bottles --num 20
 
 ## Developer setup
 
-Make sure you have python 3.11 available and on your path. Then:
+Make sure you have python 3.12 available and on your path. Then:
 
 ```bash
 # clone project
