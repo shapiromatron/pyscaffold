@@ -8,13 +8,14 @@ NOTE: this project is unrelated to the excellent [PyScaffold](https://pypi.org/p
 
 To customize for your own package:
 
-1. Find and replace `pyscaffold` and replace with `yourproject` - or whatever you want to call it.
-    - includes source code, tests, and the readme!
+1. Search & replace `pyscaffold` and replace with `yourproject` (or whatever you want to call it).
+    - includes source code, tests, and this readme!
     - rename the `pyscaffold` project and test folder too
-2. Follow the "Developer setup" section below
-3. Delete this section from your readme
+2. Review pyproject.toml; change `authors`, `classifiers`, `project.urls`, etc.
+3. Follow the "Developer setup" section below
+4. Update this readme! Delete this section, edit quickstart guide, etc.
 
-AKA, the manual [cookiecutter](https://github.com/cookiecutter/cookiecutter)...
+This is a manual [cookiecutter](https://github.com/cookiecutter/cookiecutter).  This was done intentionally; keeping it a manual job is nice for testing because it makes it easier to ensure that our github actions work as expected.
 
 ## Quickstart
 
