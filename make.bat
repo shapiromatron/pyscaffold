@@ -19,11 +19,11 @@ echo.  build        Build python wheel package
 goto :eof
 
 :lint
-black . --check && ruff .
+ruff format . --check && ruff .
 goto :eof
 
 :format
-black . && ruff . --fix --show-fixes
+ruff format . && ruff . --fix --show-fixes
 goto :eof
 
 :test

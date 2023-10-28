@@ -20,10 +20,10 @@ clean: ## Remove build artifacts
 	@rm -rf dist/
 
 lint:  ## Check formatting issues
-	@black . --check && ruff .
+	@ruff format . --check && ruff .
 
 format:  ## Fix formatting issues (where possible)
-	@black . && ruff . --fix --show-fixes
+	@ruff format . && ruff . --fix --show-fixes
 
 test:  ## Run tests
 	@py.test
