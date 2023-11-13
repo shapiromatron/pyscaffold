@@ -26,8 +26,7 @@ dev = [
   "flit~=3.9.0",
   "coverage~=7.3.2",
   "pytest~=7.4.2",
-  "black==23.9.1",
-  "ruff==0.1.0",
+  "ruff~=0.1.3",
 ]
 
 [project.urls]
@@ -37,10 +36,6 @@ Changes = "https://github.com/shapiromatron/pyscaffold/blob/main/HISTORY.md"
 
 [project.scripts]
 pyscaffold = "pyscaffold.cli:app"
-
-[tool.black]
-line-length = 100
-target-version = ['py311']
 
 [tool.ruff]
 line-length = 100
