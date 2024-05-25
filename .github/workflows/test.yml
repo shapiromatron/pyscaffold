@@ -15,9 +15,9 @@ jobs:
         python-version: ["3.12"]
         os: ["ubuntu-22.04"]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
@@ -33,11 +33,16 @@ jobs:
           coverage run -m pytest
           echo "# Python coverage report" >> $GITHUB_STEP_SUMMARY
           coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+      - name: loc
+        run: |
+          sudo apt-get install -y cloc
+          echo "# Lines of code report" >> $GITHUB_STEP_SUMMARY
+          make loc >> $GITHUB_STEP_SUMMARY
       - name: Build a wheel
         run: |
           make build
       - name: Upload wheel
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheel
           path: dist/*.whl
