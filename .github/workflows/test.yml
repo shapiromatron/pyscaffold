@@ -33,14 +33,14 @@ jobs:
           coverage run -m pytest
           echo "# Python coverage report" >> $GITHUB_STEP_SUMMARY
           coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+      - name: Build a wheel
+        run: |
+          make build
       - name: loc
         run: |
           sudo apt-get install -y cloc
           echo "# Lines of code report" >> $GITHUB_STEP_SUMMARY
           make loc >> $GITHUB_STEP_SUMMARY
-      - name: Build a wheel
-        run: |
-          make build
       - name: Upload wheel
         uses: actions/upload-artifact@v4
         with:
