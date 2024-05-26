@@ -51,8 +51,8 @@ python -m venv venv --prompt pyscaffold
 source venv/bin/activate  # or venv\Scripts\activate on windows.
 
 # install packages
-python -m pip install -U pip
-python -m pip install -e ".[dev]"
+python -m pip install -U pip uv
+uv pip install -e ".[dev]"
 
 # test local install
 pyscaffold hello

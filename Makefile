@@ -19,11 +19,20 @@ clean: ## Remove build artifacts
 	@rm -rf build/
 	@rm -rf dist/
 
+loc:  ## Lines of Code Report
+	@cloc \
+			--exclude-dir=venv \
+			--exclude-ext=json,yaml,svg,toml,ini \
+			--vcs=git \
+			--counted loc-files.txt \
+			--md \
+			.
+
 lint:  ## Check formatting issues
-	@ruff format . --check && ruff .
+	@ruff format . --check && ruff check .
 
 format:  ## Fix formatting issues (where possible)
-	@ruff format . && ruff . --fix --show-fixes
+	@ruff format . && ruff check . --fix --show-fixes
 
 test:  ## Run tests
 	@py.test
