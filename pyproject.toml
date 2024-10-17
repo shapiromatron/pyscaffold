@@ -60,3 +60,7 @@ omit = [
   "./tests/*",
   "./venv/*"
 ]
+
+[tool.coverage.report]
+fail_under=99
+precision=1
