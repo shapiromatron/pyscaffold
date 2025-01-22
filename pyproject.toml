@@ -1,7 +1,3 @@
-[build-system]
-requires = ["flit_core >=3.9,<4"]
-build-backend = "flit_core.buildapi"
-
 [project]
 name = "pyscaffold"
 authors = [{name = "My pyscaffold", email = "pyscaffold@email.com"}]
@@ -31,16 +27,20 @@ dev = [
 ]
 
 [project.urls]
-Home = "https://github.com/shapiromatron/pyscaffold"
-Changes = "https://github.com/shapiromatron/pyscaffold/blob/main/HISTORY.md"
+"Source Code" = "https://github.com/shapiromatron/pyscaffold"
+"Changelog" = "https://github.com/shapiromatron/pyscaffold/blob/main/HISTORY.md"
 "Issue Tracker" = "https://github.com/shapiromatron/pyscaffold/issues"
 
 [project.scripts]
 pyscaffold = "pyscaffold.cli:app"
 
+[build-system]
+requires = ["flit_core >=3.10,<4"]
+build-backend = "flit_core.buildapi"
+
 [tool.ruff]
 line-length = 100
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["F", "E", "W", "I", "UP", "S", "B", "T20", "RUF"]
