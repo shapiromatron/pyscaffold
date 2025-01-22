@@ -26,7 +26,7 @@ Make sure you have python 3.12 available and on your path. Then:
 python -m pip install -U pip
 
 # if it's local file or a github link...
-pip install path/to/pyscaffold-0.0.1-py3-none-any.whl
+pip install path/to/pyscaffold-0.0.3-py3-none-any.whl
 # if it's on pypi
 pip install pyscaffold
 
