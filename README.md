@@ -39,7 +39,7 @@ pyscaffold bottles --num 20
 
 ## Developer setup
 
-Make sure you have python 3.12 available and on your path. Then:
+Make sure you have uv available on your path. Then:
 
 ```bash
 # clone project
@@ -47,21 +47,21 @@ git clone git@github.com:shapiromatron/pyscaffold.git
 cd pyscaffold
 
 # create virtual environment and activate
-python -m venv venv --prompt pyscaffold
+uv venv --python=3.12 --prompt pyscaffold .venv
 source venv/bin/activate  # or venv\Scripts\activate on windows.
 
 # install packages
-python -m pip install -U pip uv
 uv pip install -e ".[dev]"
 
 # test local install
 pyscaffold hello
 
-# these should work on mac/linux/windows
-make test   # run tests
-make lint   # identify formatting errors
-make format  # fix formatting errors when possible
-make build  # build a python wheel
+# run assorted commands
+poe --help
+poe test    # run tests
+poe lint    # identify formatting errors
+poe format  # fix formatting errors when possible
+poe build   # build a python wheel
 ```
 
 Github actions are setup to execute whenever code is pushed to check code formatting and successful tests. In addition, when code is pushed to the `main` branch, a wheel artifact is created and stored on github.
