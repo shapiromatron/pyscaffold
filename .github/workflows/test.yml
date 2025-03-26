@@ -1,6 +1,7 @@
 name: Linting and Unit Tests
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -8,17 +9,12 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: ["3.12"]
-        os: ["ubuntu-24.04"]
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
           architecture: 'x64'
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -27,25 +23,27 @@ jobs:
           cache-dependency-glob: "**/pyproject.toml"
       - name: Install dependencies
         run: |
-          uv pip install --system -e ".[dev]"
+          uv sync --all-extras
       - name: Check linting
         run: |
-          poe lint
+          uv run poe lint
       - name: Test with pytest
         run: |
-          coverage run -m pytest
+          uv run coverage run -m pytest
           echo "# Python coverage report" >> $GITHUB_STEP_SUMMARY
-          coverage report --format=markdown >> $GITHUB_STEP_SUMMARY || true
+          uv run coverage report --format=markdown >> $GITHUB_STEP_SUMMARY || true
       - name: Build a wheel
         run: |
-          poe build
+          uv run poe build
       - name: loc
         run: |
           sudo apt-get install -y cloc
           echo "# Lines of code report" >> $GITHUB_STEP_SUMMARY
-          poe loc >> $GITHUB_STEP_SUMMARY
+          uv run poe loc >> $GITHUB_STEP_SUMMARY
       - name: Upload wheel
         uses: actions/upload-artifact@v4
         with:
           name: wheel
-          path: dist/*.whl
+          path: |
+            dist/*.whl
+            dist/*.tar.gz

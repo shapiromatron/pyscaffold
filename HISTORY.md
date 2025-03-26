@@ -1,5 +1,10 @@
 # History
 
+## v0.0.4 (2025-03-26)
+
+* Use uv workflows for installation/testing
+* Updated packages to latest versions
+
 ## v0.0.3 (2025-01-21)
 
 * Switched to [poethepoet](https://pypi.org/project/poethepoet/) for commands
