@@ -32,6 +32,7 @@ jobs:
           uv run coverage run -m pytest
           echo "# Python coverage report" >> $GITHUB_STEP_SUMMARY
           uv run coverage report --format=markdown >> $GITHUB_STEP_SUMMARY || true
+          uv run coverage json -q  # may fail if coverage < threshold, which we want
       - name: Build a wheel
         run: |
           uv run poe build
